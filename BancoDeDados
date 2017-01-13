@@ -1,0 +1,46 @@
+CREATE TABLE `email` (
+  `id` int(10) NOT NULL , AUTO_INCREMENT,
+  `idFornecedor` int(10) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `ref` varchar(20) NOT NULL
+) DEFAULT CHARSET=utf8;
+
+CREATE TABLE `fornecedor` (
+  `id` int(10) NOT NULL, AUTO_INCREMENT,
+  `nome` varchar(60) NOT NULL,
+  `descricao` varchar(60) NOT NULL,
+  `cidade` varchar(50) NOT NULL,
+  `endereco` varchar(60) NOT NULL,
+  `bairro` varchar(50) NOT NULL,
+  `numero` int(10) NOT NULL
+) DEFAULT CHARSET=utf8;
+
+CREATE TABLE `pedido` (
+  `id` int(10) NOT NULL, AUTO_INCREMENT,
+  `dataPedido` datetime NOT NULL,
+  `notaFiscalPedido` varchar(60) NOT NULL,
+  `fretePedido` float(10) NOT NULL,
+  `descPedido` float(10) NOT NULL,
+  `valorTotal` float(10) NOT NULL,
+) DEFAULT CHARSET=utf8;
+
+CREATE TABLE `produto` (
+  `id` int(10) NOT NULL, AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `descricao` varchar(60) NOT NULL,
+  `valor` float(10) NOT NULL,
+  `idFornecedor` int(10) NOT NULL
+) DEFAULT CHARSET=utf8;
+
+CREATE TABLE `telefone` (
+  `id` int(10) NOT NULL, AUTO_INCREMENT,
+  `idFornecedorTel` int(10) NOT NULL,
+  `dddTel` varchar(10) NOT NULL,
+  `telTel` varchar(20) NOT NULL,
+  `refTel` varchar(30) NOT NULL
+) DEFAULT CHARSET=utf8;
+
+CREATE TABLE `transportadora` (
+  `id` int(10) NOT NULL, AUTO_INCREMENT,
+  `nome` varchar(80) NOT NULL
+) DEFAULT CHARSET=utf8;
